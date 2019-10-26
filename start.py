@@ -3,6 +3,9 @@ pygame.init()
 
 win = pygame.display.set_mode((400, 400))
 
+screenWidth = 400
+screenHeight = 400
+
 pygame.display.set_caption("Glory be given to God.")
 
 x = 50
@@ -21,13 +24,13 @@ while run:
 	
 	keys = pygame.key.get_pressed()
 
-	if keys[pygame.K_LEFT]:
+	if keys[pygame.K_LEFT] and x > 0:
 		x -= vel
-	if keys[pygame.K_RIGHT]:
+	if keys[pygame.K_RIGHT] and x < (screenWidth - width):
 		x += vel
-	if keys[pygame.K_UP]:
+	if keys[pygame.K_UP] and y > 0:
 		y -= vel
-	if keys[pygame.K_DOWN]:
+	if keys[pygame.K_DOWN] and y < (screenHeight - height):
 		y += vel
 	
 	win.fill((0,0,0))
